@@ -234,7 +234,9 @@ function Navbar() {
         }
       `}</style>
 
-      <nav style={{
+      <nav
+        aria-label="Main navigation"
+        style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
         background: scrolled ? "rgba(11,35,65,0.97)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
@@ -251,7 +253,9 @@ function Navbar() {
           <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
             <img
               src="/hero/logo.png"
-              alt="The Paw Lounge"
+              alt="The Paw Lounge logo — pet grooming studio in Vizag"
+              width="80"
+              height="80"
               style={{ width: 80, height: 80, objectFit: "contain", transform: "translateY(6px)" }}
             />
             <div>
@@ -270,7 +274,7 @@ function Navbar() {
               {NAV_LINKS.map((l) => (
                 <a key={l} href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>
               ))}
-              <a href="tel:9542905904" className="nav-cta">📞 Call Now</a>
+              <a href="tel:9642189421" className="nav-cta" aria-label="Call The Paw Lounge">📞 Call Now</a>
             </div>
           )}
 
@@ -293,7 +297,7 @@ function Navbar() {
           {NAV_LINKS.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} className="mobile-nav-link" onClick={handleNavClick}>{l}</a>
           ))}
-          <a href="tel:9542905904" className="mobile-cta" onClick={handleNavClick}>📞 Call Now</a>
+          <a href="tel:9642189421" className="mobile-cta" onClick={handleNavClick} aria-label="Call The Paw Lounge">📞 Call Now</a>
         </div>
       )}
     </>
@@ -346,7 +350,7 @@ function Hero() {
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(200,155,60,0.15)", border: "1px solid rgba(200,155,60,0.3)", borderRadius: 50, padding: "6px 16px", marginBottom: 24 }}>
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#C89B3C", display: "inline-block" }} />
               <span style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 600 }}>
-                Vizag's Premium Pet Spa
+                Vizag's Premium Pet Grooming &amp; Spa
               </span>
             </div>
           </FadeIn>
@@ -439,7 +443,10 @@ function Hero() {
               }}>
                 <img
                   src="/hero/logo.png"
-                  alt="The Paw Lounge"
+                  alt="The Paw Lounge — luxury pet grooming and spa, Visakhapatnam"
+                  width="460"
+                  height="460"
+                  loading="eager"
                   style={{
                     position: "absolute",
                     width: "200%", height: "200%",
@@ -477,13 +484,13 @@ function Hero() {
 // ── Services ─────────────────────────────────────────────────────────────────
 function Services() {
   return (
-    <section id="services" style={{ padding: "80px 5%", background: "#FFF8F0" }}>
+    <section id="services" aria-labelledby="services-heading" style={{ padding: "80px 5%", background: "#FFF8F0" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>What We Offer</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Premium Services</h2>
-            <p style={{ color: "#666", maxWidth: 500, margin: "0 auto", lineHeight: 1.7, fontSize: 15 }}>Every service designed with your pet's comfort and well-being as the absolute priority.</p>
+            <h2 id="services-heading" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Premium Pet Care Services in Vizag</h2>
+            <p style={{ color: "#666", maxWidth: 500, margin: "0 auto", lineHeight: 1.7, fontSize: 15 }}>From professional dog grooming to relaxing cat spa sessions — every service at The Paw Lounge is designed with your pet's comfort and well-being as the absolute priority.</p>
           </div>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
@@ -530,12 +537,12 @@ function ServiceCard({ icon, title, desc, color }) {
 // ── Featured Pets ─────────────────────────────────────────────────────────────
 function FeaturedPets() {
   return (
-    <section id="pets" style={{ padding: "80px 5%", background: "#fff" }}>
+    <section id="pets" aria-labelledby="pets-heading" style={{ padding: "80px 5%", background: "#fff" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Available Now</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Find Your Companion</h2>
+            <h2 id="pets-heading" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Pet Adoption in Visakhapatnam</h2>
             <p style={{ color: "#666", maxWidth: 500, margin: "0 auto", lineHeight: 1.7, fontSize: 15 }}>Each pet is health-checked, vaccinated and lovingly cared for — ready for their forever home.</p>
           </div>
         </FadeIn>
@@ -572,7 +579,7 @@ function PetCard({ name, category, image, desc, color }) {
         transition: "transform 0.4s",
         transform: hov ? "scale(1.05)" : "none",
       }}>
-        <img src={image} alt={name} style={{ width: 130, height: 175, objectFit: "contain" }} />
+        <img src={image} alt={`${name} available for adoption at The Paw Lounge, Vizag`} width="130" height="175" loading="lazy" style={{ width: 130, height: 175, objectFit: "contain" }} />
       </div>
       <div style={{ padding: "22px 22px 26px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
@@ -591,12 +598,12 @@ function Products() {
   const cats = ["All", "Dog Food", "Cat Food", "Toys", "Leashes", "Bowls", "Grooming"];
   const filtered = active === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.cat === active);
   return (
-    <section id="products" style={{ padding: "80px 5%", background: "#F5EFE6" }}>
+    <section id="products" aria-labelledby="products-heading" style={{ padding: "80px 5%", background: "#F5EFE6" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
             <p style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Our Store</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Premium Products</h2>
+            <h2 id="products-heading" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Premium Pet Products &amp; Accessories</h2>
           </div>
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -639,7 +646,7 @@ function ProductCard({ name, cat, image, bg }) {
       }}
     >
       <div style={{ background: bg, height: 140, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <img src={image} alt={name} style={{ width: 130, height: 100, objectFit: "contain" }} />
+        <img src={image} alt={`${name} — available at The Paw Lounge pet store, Vizag`} width="130" height="100" loading="lazy" style={{ width: 130, height: 100, objectFit: "contain" }} />
       </div>
       <div style={{ padding: "14px 18px 18px" }}>
         <p style={{ color: "#C89B3C", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", fontWeight: 700, margin: "0 0 5px" }}>{cat}</p>
@@ -652,13 +659,13 @@ function ProductCard({ name, cat, image, bg }) {
 // ── Why Us ────────────────────────────────────────────────────────────────────
 function WhyUs() {
   return (
-    <section style={{ padding: "80px 5%", background: "#0B2341", position: "relative", overflow: "hidden" }}>
+    <section aria-labelledby="whyus-heading" style={{ padding: "80px 5%", background: "#0B2341", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", top: 0, right: 0, width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,155,60,0.08), transparent 70%)", pointerEvents: "none" }} />
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Our Promise</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#fff", margin: 0 }}>Why Choose The Paw Lounge</h2>
+            <h2 id="whyus-heading" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#fff", margin: 0 }}>Why Choose The Paw Lounge in Vizag</h2>
           </div>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 24 }}>
@@ -698,13 +705,13 @@ function WhyCard({ icon, title, desc }) {
 function Contact() {
   const isMobile = useIsMobile();
   return (
-    <section id="contact" style={{ padding: "80px 5%", background: "#fff" }}>
+    <section id="contact" aria-labelledby="contact-heading" style={{ padding: "80px 5%", background: "#fff" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 12 }}>Get In Touch</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Visit Our Store Today</h2>
-            <p style={{ color: "#666", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, fontSize: 15 }}>We'd love to meet you and your pet. Drop by or reach out — we're always happy to help.</p>
+            <h2 id="contact-heading" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px,4vw,52px)", fontWeight: 700, color: "#0B2341", margin: "0 0 16px" }}>Visit Our Pet Grooming Studio in Visakhapatnam</h2>
+            <p style={{ color: "#666", maxWidth: 480, margin: "0 auto", lineHeight: 1.7, fontSize: 15 }}>We'd love to meet you and your pet at our Beach Road studio in Vizag. Drop by or reach out — we're always happy to help.</p>
           </div>
         </FadeIn>
         <div style={{
@@ -750,7 +757,8 @@ function Contact() {
   style={{ border: "none", borderRadius: 20, display: "block" }}
   loading="lazy"
   allowFullScreen
-  title="Store Location"
+  title="The Paw Lounge location — Beach Road, Jalari Peta, Visakhapatnam"
+  aria-label="Google Maps showing The Paw Lounge pet grooming studio in Vizag"
 />
             </div>
           </FadeIn>
@@ -789,14 +797,14 @@ function Footer() {
         <div className="footer-grid">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-              <img src="/hero/logo.png" alt="The Paw Lounge" style={{ width: 54, height: 54, objectFit: "contain" }} />
+              <img src="/hero/logo.png" alt="The Paw Lounge logo" width="54" height="54" loading="lazy" style={{ width: 54, height: 54, objectFit: "contain" }} />
               <div>
                 <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 17, fontWeight: 700, color: "#C89B3C" }}>The Paw Lounge</div>
                 <div style={{ fontSize: 9, color: "rgba(255,255,255,0.35)", letterSpacing: 2, textTransform: "uppercase" }}>CANINE AND FELINE GROOMI</div>
               </div>
             </div>
             <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, lineHeight: 1.8, maxWidth: 280, margin: 0 }}>
-              Vizag's most trusted premium pet care destination. Luxury grooming, spa treatments, and more — for pets who deserve only the best.
+              Visakhapatnam's most trusted premium pet care destination. Expert dog &amp; cat grooming, spa treatments, and more — for pets who deserve only the best.
             </p>
           </div>
           <div>
@@ -816,7 +824,7 @@ function Footer() {
           </div>
           <div>
             <h4 style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, margin: "0 0 18px" }}>Contact</h4>
-            <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, margin: "0 0 9px" }}>📍 Beac Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017</p>
+            <address style={{ fontStyle: "normal", color: "rgba(255,255,255,0.45)", fontSize: 13, margin: "0 0 9px" }}>📍 Beach Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017</address>
             <a href="tel:9642189421" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>📞 9642189421</a>
             <a href="https://wa.me/919642189421" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>💬 WhatsApp Us</a>
             <a href="mailto:sentryx.solutions@gmail.com" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", wordBreak: "break-all" }}>✉️ sentryx.solutions@gmail.com</a>
@@ -833,27 +841,19 @@ function Footer() {
 
 // ── App ───────────────────────────────────────────────────────────────────────
 export default function PawLounge() {
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "preconnect";
-    link.href = "https://fonts.googleapis.com";
-    document.head.appendChild(link);
-    const link2 = document.createElement("link");
-    link2.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap";
-    link2.rel = "stylesheet";
-    document.head.appendChild(link2);
-    document.title = "The Paw Lounge — Pet Grooming & Spa, Vizag";
-  }, []);
-
   return (
     <div style={{ fontFamily: "'Poppins', 'Segoe UI', sans-serif", overflowX: "hidden" }}>
-      <Navbar />
-      <Hero />
-      <Services />
-      <FeaturedPets />
-      <Products />
-      <WhyUs />
-      <Contact />
+      <header role="banner">
+        <Navbar />
+      </header>
+      <main id="main-content">
+        <Hero />
+        <Services />
+        <FeaturedPets />
+        <Products />
+        <WhyUs />
+        <Contact />
+      </main>
       <Footer />
       {/* Floating Action Buttons — stacked vertically */}
       <div style={{
@@ -884,7 +884,8 @@ export default function PawLounge() {
         {/* Call */}
         <a
           href="tel:9642189421"
-          title="Call Us"
+          title="Call The Paw Lounge"
+          aria-label="Call The Paw Lounge"
           style={{
             width: 56, height: 56, borderRadius: "50%",
             background: "linear-gradient(135deg, #C89B3C, #E8C46A)",

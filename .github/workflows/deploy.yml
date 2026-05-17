@@ -1,0 +1,65 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Install SSH Client
+      - name: Install SSH Client
+        run: sudo apt-get update && sudo apt-get install -y openssh-client
+
+      # Start SSH Agent
+      - name: Start SSH Agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Add server to known hosts
+      - name: Add Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      # Deploy
+      - name: Deploy to Server
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+          set -e
+
+          PROJECT_DIR="/root/projects/.sen/the-paw-lounge-2"
+
+          echo "===== DEPLOY START ====="
+
+          cd "$PROJECT_DIR"
+
+          echo "Resetting repo to latest..."
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+
+          echo "Building Docker images..."
+          docker compose build
+
+          echo "Build successful ✅"
+
+          echo "Stopping old containers..."
+          docker compose down
+
+          echo "Starting new containers..."
+          docker compose up -d
+
+          echo "Cleaning unused images..."
+          docker image prune -f
+
+          echo "===== DEPLOY SUCCESS ====="
+          EOF
