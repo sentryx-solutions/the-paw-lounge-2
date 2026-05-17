@@ -237,13 +237,13 @@ function Navbar() {
       <nav
         aria-label="Main navigation"
         style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: scrolled ? "rgba(11,35,65,0.97)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(200,155,60,0.2)" : "none",
-        transition: "all 0.4s ease",
-        padding: "0 5%",
-      }}>
+          position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+          background: scrolled ? "rgba(11,35,65,0.97)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(200,155,60,0.2)" : "none",
+          transition: "all 0.4s ease",
+          padding: "0 5%",
+        }}>
         <div style={{
           maxWidth: 1200, margin: "0 auto",
           display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -368,29 +368,29 @@ function Hero() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p
-  style={{
-    color: "rgba(255,255,255,0.65)",
-    fontSize: isMobile ? 14 : 16,
-    lineHeight: 1.8,
-    marginBottom: 40,
-    maxWidth: 500,
-  }}
->
-  Professional grooming, indulgent bathing, premium pet food,
-  accessories, and healthy pets for loving homes — all under one
-  luxurious roof. Backed by{" "}
-  <span
-    style={{
-      color: "#FFD700",
-      fontWeight: 700,
-      fontSize: isMobile ? 16 : 18,
-    }}
-  >
-    15+ years of experience
-  </span>{" "}
-  in pet care, we combine expertise, compassion, and premium-quality
-  services to keep your furry companions happy, healthy, and pampered.
-</p>
+              style={{
+                color: "rgba(255,255,255,0.65)",
+                fontSize: isMobile ? 14 : 16,
+                lineHeight: 1.8,
+                marginBottom: 40,
+                maxWidth: 500,
+              }}
+            >
+              Professional grooming, indulgent bathing, premium pet food,
+              accessories, and healthy pets for loving homes — all under one
+              luxurious roof. Backed by{" "}
+              <span
+                style={{
+                  color: "#FFD700",
+                  fontWeight: 700,
+                  fontSize: isMobile ? 16 : 18,
+                }}
+              >
+                15+ years of experience
+              </span>{" "}
+              in pet care, we combine expertise, compassion, and premium-quality
+              services to keep your furry companions happy, healthy, and pampered.
+            </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
@@ -727,7 +727,7 @@ function Contact() {
                 { icon: "📍", label: "Location", val: "Beach Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017" },
                 { icon: "📞", label: "Phone", val: "9642189421", link: "tel:9642189421" },
                 { icon: "💬", label: "WhatsApp", val: "9642189421", link: "https://wa.me/919642189421" },
-                { icon: "✉️", label: "Email", val: "thepawloungepetspa@gmail.com", link: "mailto:sentryx.solutions@gmail.com" },
+                { icon: "✉️", label: "Email", val: "thepawloungepetspa@gmail.com", link: "mailto:thepawloungepetspa@gmail.com" },
               ].map((c) => (
                 <div key={c.label} style={{ display: "flex", gap: 16, alignItems: "flex-start", marginBottom: 22 }}>
                   <div style={{ width: 42, height: 42, borderRadius: 12, background: "rgba(200,155,60,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>{c.icon}</div>
@@ -751,15 +751,15 @@ function Contact() {
             <div style={{ background: "#F8F4EC", borderRadius: 28, padding: 20, width: "100%", boxSizing: "border-box", boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}>
               <h3 style={{ fontSize: 26, fontWeight: 700, color: "#0B2A52", marginBottom: 16, fontFamily: "'Playfair Display', Georgia, serif" }}>Visit Us</h3>
               <iframe
-  src="https://www.google.com/maps?q=17.7403685,83.343301&z=17&output=embed"
-  width="100%"
-  height={isMobile ? 260 : 340}
-  style={{ border: "none", borderRadius: 20, display: "block" }}
-  loading="lazy"
-  allowFullScreen
-  title="The Paw Lounge location — Beach Road, Jalari Peta, Visakhapatnam"
-  aria-label="Google Maps showing The Paw Lounge pet grooming studio in Vizag"
-/>
+                src="https://www.google.com/maps?q=17.7403685,83.343301&z=17&output=embed"
+                width="100%"
+                height={isMobile ? 260 : 340}
+                style={{ border: "none", borderRadius: 20, display: "block" }}
+                loading="lazy"
+                allowFullScreen
+                title="The Paw Lounge location — Beach Road, Jalari Peta, Visakhapatnam"
+                aria-label="Google Maps showing The Paw Lounge pet grooming studio in Vizag"
+              />
             </div>
           </FadeIn>
         </div>
@@ -827,7 +827,7 @@ function Footer() {
             <address style={{ fontStyle: "normal", color: "rgba(255,255,255,0.45)", fontSize: 13, margin: "0 0 9px" }}>📍 Beach Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017</address>
             <a href="tel:9642189421" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>📞 9642189421</a>
             <a href="https://wa.me/919642189421" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>💬 WhatsApp Us</a>
-            <a href="mailto:sentryx.solutions@gmail.com" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", wordBreak: "break-all" }}>✉️ sentryx.solutions@gmail.com</a>
+            <a href="mailto:thepawloungepetspa@gmail.com" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", wordBreak: "break-all" }}>✉️ thepawloungepetspa@gmail.com</a>
           </div>
         </div>
         <div style={{ paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
