@@ -720,7 +720,7 @@ function Contact() {
                 { icon: "📍", label: "Location", val: "Beach Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017" },
                 { icon: "📞", label: "Phone", val: "9642189421", link: "tel:9642189421" },
                 { icon: "💬", label: "WhatsApp", val: "9642189421", link: "https://wa.me/919642189421" },
-                { icon: "✉️", label: "Email", val: "sentryx.solutions@gmail.com", link: "mailto:sentryx.solutions@gmail.com" },
+                { icon: "✉️", label: "Email", val: "thepawloungepetspa@gmail.com", link: "mailto:sentryx.solutions@gmail.com" },
               ].map((c) => (
                 <div key={c.label} style={{ display: "flex", gap: 16, alignItems: "flex-start", marginBottom: 22 }}>
                   <div style={{ width: 42, height: 42, borderRadius: 12, background: "rgba(200,155,60,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>{c.icon}</div>
