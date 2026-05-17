@@ -259,7 +259,7 @@ function Navbar() {
                 The Paw Lounge
               </div>
               <div style={{ fontSize: 9, color: "rgba(255,255,255,0.5)", letterSpacing: 2, textTransform: "uppercase" }}>
-                Pet Grooming & Spa
+                CANINE AND FELINE GROOMI
               </div>
             </div>
           </div>
@@ -346,7 +346,7 @@ function Hero() {
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(200,155,60,0.15)", border: "1px solid rgba(200,155,60,0.3)", borderRadius: 50, padding: "6px 16px", marginBottom: 24 }}>
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#C89B3C", display: "inline-block" }} />
               <span style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 600 }}>
-                Hyderabad's Premium Pet Spa
+                Vizag's Premium Pet Spa
               </span>
             </div>
           </FadeIn>
@@ -363,9 +363,30 @@ function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: isMobile ? 14 : 16, lineHeight: 1.8, marginBottom: 40, maxWidth: 500 }}>
-              Professional grooming, indulgent bathing, premium pet food, accessories, and healthy pets for loving homes — all under one luxurious roof.
-            </p>
+            <p
+  style={{
+    color: "rgba(255,255,255,0.65)",
+    fontSize: isMobile ? 14 : 16,
+    lineHeight: 1.8,
+    marginBottom: 40,
+    maxWidth: 500,
+  }}
+>
+  Professional grooming, indulgent bathing, premium pet food,
+  accessories, and healthy pets for loving homes — all under one
+  luxurious roof. Backed by{" "}
+  <span
+    style={{
+      color: "#FFD700",
+      fontWeight: 700,
+      fontSize: isMobile ? 16 : 18,
+    }}
+  >
+    15+ years of experience
+  </span>{" "}
+  in pet care, we combine expertise, compassion, and premium-quality
+  services to keep your furry companions happy, healthy, and pampered.
+</p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
@@ -385,7 +406,7 @@ function Hero() {
           </FadeIn>
           <FadeIn delay={0.4}>
             <div style={{ display: "flex", gap: 10, marginTop: 40, flexWrap: "wrap" }}>
-              {["🏙️ Trusted in Hyderabad", "✨ Premium Pet Care", "💚 Healthy Pets"].map((b, i) => (
+              {["🏙️ Trusted in Vizag", "✨ Premium Pet Care", "💚 Healthy Pets"].map((b, i) => (
                 <div key={i} style={{
                   background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)",
                   borderRadius: 50, padding: "7px 14px", fontSize: 12, color: "rgba(255,255,255,0.75)",
@@ -437,7 +458,7 @@ function Hero() {
                 boxShadow: "0 8px 24px rgba(200,155,60,0.4)",
                 transform: `translateY(${float * -0.8}px)`,
                 whiteSpace: "nowrap",
-              }}>🐕 Dogs & Cats</div>
+              }}>🐈 All pets 🐕 </div>
               <div style={{
                 position: "absolute", bottom: 20, left: isMobile ? -15 : -20,
                 background: "rgba(255,255,255,0.95)", borderRadius: 16,
@@ -696,9 +717,9 @@ function Contact() {
             <div style={{ background: "#0B2341", borderRadius: 28, padding: isMobile ? "36px 28px" : "48px 44px", color: "#fff" }}>
               <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 22, fontWeight: 700, color: "#C89B3C", margin: "0 0 28px" }}>Contact Information</h3>
               {[
-                { icon: "📍", label: "Location", val: "Hyderabad, Telangana" },
-                { icon: "📞", label: "Phone", val: "9542905904", link: "tel:9542905904" },
-                { icon: "💬", label: "WhatsApp", val: "9542905904", link: "https://wa.me/919542905904" },
+                { icon: "📍", label: "Location", val: "Beach Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017" },
+                { icon: "📞", label: "Phone", val: "9642189421", link: "tel:9642189421" },
+                { icon: "💬", label: "WhatsApp", val: "9642189421", link: "https://wa.me/919642189421" },
                 { icon: "✉️", label: "Email", val: "sentryx.solutions@gmail.com", link: "mailto:sentryx.solutions@gmail.com" },
               ].map((c) => (
                 <div key={c.label} style={{ display: "flex", gap: 16, alignItems: "flex-start", marginBottom: 22 }}>
@@ -715,7 +736,7 @@ function Contact() {
               ))}
               <div style={{ marginTop: 28, padding: "18px", background: "rgba(200,155,60,0.1)", borderRadius: 16, border: "1px solid rgba(200,155,60,0.2)" }}>
                 <p style={{ color: "#C89B3C", fontWeight: 600, fontSize: 13, margin: "0 0 6px" }}>Business Hours</p>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, margin: 0, lineHeight: 1.7 }}>Mon–Sat: 9:00 AM – 7:00 PM<br />Sunday: 10:00 AM – 5:00 PM</p>
+                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, margin: 0, lineHeight: 1.7 }}>Mon–Sat: 9:00 AM – 9:00 PM<br />Sunday: 9:00 AM – 9:00 PM</p>
               </div>
             </div>
           </FadeIn>
@@ -723,14 +744,14 @@ function Contact() {
             <div style={{ background: "#F8F4EC", borderRadius: 28, padding: 20, width: "100%", boxSizing: "border-box", boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}>
               <h3 style={{ fontSize: 26, fontWeight: 700, color: "#0B2A52", marginBottom: 16, fontFamily: "'Playfair Display', Georgia, serif" }}>Visit Us</h3>
               <iframe
-                src="https://www.google.com/maps?q=Hyderabad,Telangana&output=embed"
-                width="100%"
-                height={isMobile ? 260 : 340}
-                style={{ border: "none", borderRadius: 20, display: "block" }}
-                loading="lazy"
-                allowFullScreen
-                title="Store Location"
-              />
+  src="https://www.google.com/maps?q=17.7403685,83.343301&z=17&output=embed"
+  width="100%"
+  height={isMobile ? 260 : 340}
+  style={{ border: "none", borderRadius: 20, display: "block" }}
+  loading="lazy"
+  allowFullScreen
+  title="Store Location"
+/>
             </div>
           </FadeIn>
         </div>
@@ -771,11 +792,11 @@ function Footer() {
               <img src="/hero/logo.png" alt="The Paw Lounge" style={{ width: 54, height: 54, objectFit: "contain" }} />
               <div>
                 <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 17, fontWeight: 700, color: "#C89B3C" }}>The Paw Lounge</div>
-                <div style={{ fontSize: 9, color: "rgba(255,255,255,0.35)", letterSpacing: 2, textTransform: "uppercase" }}>Pet Grooming & Spa</div>
+                <div style={{ fontSize: 9, color: "rgba(255,255,255,0.35)", letterSpacing: 2, textTransform: "uppercase" }}>CANINE AND FELINE GROOMI</div>
               </div>
             </div>
             <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, lineHeight: 1.8, maxWidth: 280, margin: 0 }}>
-              Hyderabad's most trusted premium pet care destination. Luxury grooming, spa treatments, and more — for pets who deserve only the best.
+              Vizag's most trusted premium pet care destination. Luxury grooming, spa treatments, and more — for pets who deserve only the best.
             </p>
           </div>
           <div>
@@ -795,15 +816,15 @@ function Footer() {
           </div>
           <div>
             <h4 style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, margin: "0 0 18px" }}>Contact</h4>
-            <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, margin: "0 0 9px" }}>📍 Hyderabad, Telangana</p>
-            <a href="tel:9542905904" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>📞 9542905904</a>
-            <a href="https://wa.me/919542905904" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>💬 WhatsApp Us</a>
+            <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, margin: "0 0 9px" }}>📍 Beac Rd, Jalari Peta, Visakhapatnam, Andhra Pradesh 530017</p>
+            <a href="tel:9642189421" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>📞 9642189421</a>
+            <a href="https://wa.me/919642189421" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", margin: "0 0 9px" }}>💬 WhatsApp Us</a>
             <a href="mailto:sentryx.solutions@gmail.com" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", wordBreak: "break-all" }}>✉️ sentryx.solutions@gmail.com</a>
           </div>
         </div>
         <div style={{ paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, margin: 0 }}>© 2025 The Paw Lounge. All rights reserved.</p>
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, margin: 0 }}>Made with 🐾 in Hyderabad</p>
+          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, margin: 0 }}>Made with 😊 in Vizag</p>
         </div>
       </div>
     </footer>
@@ -821,7 +842,7 @@ export default function PawLounge() {
     link2.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap";
     link2.rel = "stylesheet";
     document.head.appendChild(link2);
-    document.title = "The Paw Lounge — Pet Grooming & Spa, Hyderabad";
+    document.title = "The Paw Lounge — Pet Grooming & Spa, Vizag";
   }, []);
 
   return (
@@ -842,7 +863,7 @@ export default function PawLounge() {
       }}>
         {/* WhatsApp */}
         <a
-          href="https://wa.me/919542905904?text=Hi%20The%20Paw%20Lounge"
+          href="https://wa.me/919642189421?text=Hi%20The%20Paw%20Lounge"
           target="_blank"
           rel="noopener noreferrer"
           title="Chat on WhatsApp"
@@ -862,7 +883,7 @@ export default function PawLounge() {
 
         {/* Call */}
         <a
-          href="tel:9542905904"
+          href="tel:9642189421"
           title="Call Us"
           style={{
             width: 56, height: 56, borderRadius: "50%",

@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  pet-care:
+    build: .
+    container_name: pet-care
+    ports:
+      - "3000:80"
+    restart: unless-stopped
