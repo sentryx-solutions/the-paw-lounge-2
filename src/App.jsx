@@ -1047,6 +1047,7 @@ export default function PawLounge() {
       <main id="main-content">
         <Hero />
         <Services />
+        <Training />
         <FeaturedPets />
         <Products />
         <WhyUs />
