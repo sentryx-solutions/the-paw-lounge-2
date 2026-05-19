@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
-const NAV_LINKS = ["Home", "Services", "Products", "Pets", "Contact"];
+const NAV_LINKS = ["Home", "Services", "Training", "Products", "Pets", "Contact"];
 
 const SERVICES = [
   {
@@ -585,6 +585,150 @@ function ServiceCard({ icon, title, desc, color }) {
       <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 20, fontWeight: 700, color: "#0B2341", margin: "0 0 10px" }}>{title}</h3>
       <p style={{ color: "#777", lineHeight: 1.75, fontSize: 14, margin: 0 }}>{desc}</p>
     </div>
+  );
+}
+// ── Training ────────────────────────────────────────────────────────────────
+function Training() {
+  const TRAINING_PROGRAMS = [
+    {
+      icon: "🐕",
+      title: "Basic Obedience",
+      desc: "Sit, stay, recall, leash walking, and essential behavioural discipline training.",
+    },
+    {
+      icon: "🛡️",
+      title: "Protection Training",
+      desc: "Professional protection and guard dog development handled safely by experts.",
+    },
+    {
+      icon: "🎯",
+      title: "Advanced Commands",
+      desc: "Advanced command response, focus building, and controlled behavioural learning.",
+    },
+    {
+      icon: "💚",
+      title: "Behaviour Correction",
+      desc: "Training programs for aggression, anxiety, barking, and unwanted habits.",
+    },
+  ];
+
+  return (
+    <section
+      id="training"
+      aria-labelledby="training-heading"
+      style={{
+        padding: "80px 5%",
+        background: "#fff",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <FadeIn>
+          <div style={{ textAlign: "center", marginBottom: 60 }}>
+            <p
+              style={{
+                color: "#C89B3C",
+                fontSize: 11,
+                letterSpacing: 3,
+                textTransform: "uppercase",
+                fontWeight: 700,
+                marginBottom: 12,
+              }}
+            >
+              Professional Animal Training
+            </p>
+
+            <h2
+              id="training-heading"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: "clamp(28px,4vw,52px)",
+                fontWeight: 700,
+                color: "#0B2341",
+                margin: "0 0 16px",
+              }}
+            >
+              We Train Animals With Care & Expertise
+            </h2>
+
+            <p
+              style={{
+                color: "#666",
+                maxWidth: 700,
+                margin: "0 auto",
+                lineHeight: 1.8,
+                fontSize: 15,
+              }}
+            >
+              At The Paw Lounge, we provide professional animal training programs
+              designed to improve obedience, behaviour, confidence, and safety.
+              Our experienced trainers use positive reinforcement techniques to
+              help pets become disciplined, social, and happy companions.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 24,
+          }}
+        >
+          {TRAINING_PROGRAMS.map((item, i) => (
+            <FadeIn key={item.title} delay={i * 0.1}>
+              <div
+                style={{
+                  background: "#F8F4EC",
+                  borderRadius: 24,
+                  padding: "34px 28px",
+                  border: "1px solid rgba(200,155,60,0.12)",
+                  transition: "0.3s ease",
+                }}
+              >
+                <div
+                  style={{
+                    width: 60,
+                    height: 60,
+                    borderRadius: 18,
+                    background: "rgba(200,155,60,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 28,
+                    marginBottom: 20,
+                  }}
+                >
+                  {item.icon}
+                </div>
+
+                <h3
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: "#0B2341",
+                    marginBottom: 10,
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  style={{
+                    color: "#666",
+                    lineHeight: 1.7,
+                    fontSize: 14,
+                    margin: 0,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
