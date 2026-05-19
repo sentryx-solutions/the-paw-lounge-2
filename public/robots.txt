@@ -1,4 +1,25 @@
+# robots.txt — The Paw Lounge (https://thepawloungepetspa.com/)
+# Updated: 2026-05-19
+
+# All well-behaved crawlers
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Crawl-delay: 5
 
+# Googlebot — no crawl delay needed (Google handles it)
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
 Sitemap: https://thepawloungepetspa.com/sitemap.xml

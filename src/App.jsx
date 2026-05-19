@@ -204,6 +204,20 @@ function Navbar() {
 
   return (
     <>
+      {/* Skip to main content — critical for screen reader / keyboard navigation SEO */}
+      <a
+        href="#main-content"
+        style={{
+          position: "absolute", top: -60, left: 8, zIndex: 9999,
+          background: "#C89B3C", color: "#0B2341", fontWeight: 700,
+          padding: "10px 20px", borderRadius: 8, textDecoration: "none",
+          fontSize: 14, transition: "top 0.2s",
+        }}
+        onFocus={e => e.currentTarget.style.top = "8px"}
+        onBlur={e => e.currentTarget.style.top = "-60px"}
+      >
+        Skip to main content
+      </a>
       <style>{`
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-10px); }
@@ -326,9 +340,14 @@ function Navbar() {
           {!isMobile && (
             <div style={{ display: "flex", gap: 36, alignItems: "center" }}>
               {NAV_LINKS.map((l) => (
-                <a key={l} href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>
+                <a
+                  key={l}
+                  href={`#${l.toLowerCase()}`}
+                  className="nav-link"
+                  aria-label={`Navigate to ${l} section`}
+                >{l}</a>
               ))}
-              <a href="tel:9642189421" className="nav-cta" aria-label="Call The Paw Lounge">📞 Call Now</a>
+              <a href="tel:9642189421" className="nav-cta" aria-label="Call The Paw Lounge at 9642189421">📞 Call Now</a>
             </div>
           )}
 
@@ -562,7 +581,8 @@ function Services() {
 function ServiceCard({ icon, title, desc, color }) {
   const [hov, setHov] = useState(false);
   return (
-    <div
+    <article
+      aria-label={`${title} service at The Paw Lounge, Vizag`}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
@@ -574,17 +594,19 @@ function ServiceCard({ icon, title, desc, color }) {
         cursor: "default",
       }}
     >
-      <div style={{
-        width: 60, height: 60, borderRadius: 18, fontSize: 26,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        background: color === "#C89B3C" ? "rgba(200,155,60,0.1)" : "rgba(11,35,65,0.06)",
-        marginBottom: 20,
-        transition: "transform 0.3s",
-        transform: hov ? "scale(1.1) rotate(5deg)" : "none",
-      }}>{icon}</div>
+      <div
+        aria-hidden="true"
+        style={{
+          width: 60, height: 60, borderRadius: 18, fontSize: 26,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          background: color === "#C89B3C" ? "rgba(200,155,60,0.1)" : "rgba(11,35,65,0.06)",
+          marginBottom: 20,
+          transition: "transform 0.3s",
+          transform: hov ? "scale(1.1) rotate(5deg)" : "none",
+        }}>{icon}</div>
       <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 20, fontWeight: 700, color: "#0B2341", margin: "0 0 10px" }}>{title}</h3>
       <p style={{ color: "#777", lineHeight: 1.75, fontSize: 14, margin: 0 }}>{desc}</p>
-    </div>
+    </article>
   );
 }
 // ── Training ────────────────────────────────────────────────────────────────
@@ -759,7 +781,8 @@ function FeaturedPets() {
 function PetCard({ name, category, image, desc, color }) {
   const [hov, setHov] = useState(false);
   return (
-    <div
+    <article
+      aria-label={`${name} (${category}) available for adoption at The Paw Lounge, Visakhapatnam`}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
@@ -777,7 +800,7 @@ function PetCard({ name, category, image, desc, color }) {
         transition: "transform 0.4s",
         transform: hov ? "scale(1.05)" : "none",
       }}>
-        <img src={image} alt={`${name} available for adoption at The Paw Lounge, Vizag`} width="130" height="175" loading="lazy" style={{ width: 130, height: 175, objectFit: "contain" }} />
+        <img src={image} alt={`${name} — ${category} available for adoption in Visakhapatnam at The Paw Lounge`} width="130" height="175" loading="lazy" style={{ width: 130, height: 175, objectFit: "contain" }} />
       </div>
       <div style={{ padding: "22px 22px 26px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
@@ -786,7 +809,7 @@ function PetCard({ name, category, image, desc, color }) {
         </div>
         <p style={{ color: "#777", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{desc}</p>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -833,7 +856,8 @@ function Products() {
 function ProductCard({ name, cat, image, bg }) {
   const [hov, setHov] = useState(false);
   return (
-    <div
+    <article
+      aria-label={`${name} — ${cat} available at The Paw Lounge pet store in Vizag`}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
@@ -844,13 +868,13 @@ function ProductCard({ name, cat, image, bg }) {
       }}
     >
       <div style={{ background: bg, height: 140, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <img src={image} alt={`${name} — available at The Paw Lounge pet store, Vizag`} width="130" height="100" loading="lazy" style={{ width: 130, height: 100, objectFit: "contain" }} />
+        <img src={image} alt={`${name} — ${cat} sold at The Paw Lounge premium pet store, Visakhapatnam`} width="130" height="100" loading="lazy" style={{ width: 130, height: 100, objectFit: "contain" }} />
       </div>
       <div style={{ padding: "14px 18px 18px" }}>
         <p style={{ color: "#C89B3C", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", fontWeight: 700, margin: "0 0 5px" }}>{cat}</p>
         <h4 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 14, fontWeight: 700, color: "#0B2341", margin: 0 }}>{name}</h4>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -1029,7 +1053,7 @@ function Footer() {
           </div>
         </div>
         <div style={{ paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, margin: 0 }}>© 2025 The Paw Lounge. All rights reserved.</p>
+          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, margin: 0 }}>© 2026 The Paw Lounge. All rights reserved.</p>
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 12, margin: 0 }}>Made with 😊 in Vizag</p>
         </div>
       </div>
@@ -1065,7 +1089,8 @@ export default function PawLounge() {
           href="https://wa.me/919642189421?text=Hi%20The%20Paw%20Lounge"
           target="_blank"
           rel="noopener noreferrer"
-          title="Chat on WhatsApp"
+          title="Chat with The Paw Lounge on WhatsApp"
+          aria-label="Chat with The Paw Lounge on WhatsApp — pet grooming studio in Vizag"
           style={{
             width: 56, height: 56, borderRadius: "50%",
             background: "#25D366",
@@ -1077,7 +1102,7 @@ export default function PawLounge() {
           onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.12)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(37,211,102,0.65)"; }}
           onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 6px 22px rgba(37,211,102,0.5)"; }}
         >
-          <FaWhatsapp style={{ color: "white", fontSize: 28 }} />
+          <FaWhatsapp style={{ color: "white", fontSize: 28 }} aria-hidden="true" />
         </a>
 
         {/* Call */}
