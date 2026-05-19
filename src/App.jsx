@@ -1040,7 +1040,7 @@ function Footer() {
           </div>
           <div>
             <h4 style={{ color: "#C89B3C", fontSize: 11, letterSpacing: 2, textTransform: "uppercase", fontWeight: 700, margin: "0 0 18px" }}>Services</h4>
-            {["Pet Grooming", "Spa & Bathing", "Accessories", "Pet Food", "Adoption"].map((s) => (
+            {["Pet Grooming", "Spa & Bathing", "Accessories","Training", "Pet Food", "Adoption"].map((s) => (
               <p key={s} style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, margin: "0 0 9px" }}>{s}</p>
             ))}
           </div>
