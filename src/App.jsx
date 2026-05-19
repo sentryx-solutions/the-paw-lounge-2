@@ -28,6 +28,60 @@ const SERVICES = [
     desc: "Nutritionist-approved, natural and grain-free food ranges crafted for optimal pet health and vitality.",
     color: "#0B2341",
   },
+  {
+    icon: "🐕",
+    title: "Dog Training",
+    desc: "Professional dog training programs for discipline, confidence, and behaviour improvement.",
+    color: "#C89B3C",
+  },
+  {
+    icon: "🎯",
+    title: "Obedience Training",
+    desc: "Essential obedience commands and structured behavioural learning for pets.",
+    color: "#0B2341",
+  },
+  {
+    icon: "🛡️",
+    title: "Advanced Obedience",
+    desc: "Advanced-level command response and controlled behavioural training.",
+    color: "#C89B3C",
+  },
+  {
+    icon: "🎾",
+    title: "Retrieving",
+    desc: "Specialized retrieval training for active and working dogs.",
+    color: "#0B2341",
+  },
+  {
+    icon: "👃",
+    title: "Scent Discrimination",
+    desc: "Scent identification and discrimination training for intelligent canine development.",
+    color: "#C89B3C",
+  },
+  {
+    icon: "⚔️",
+    title: "Attack Training",
+    desc: "Controlled protection and attack-response training by experienced handlers.",
+    color: "#0B2341",
+  },
+  {
+    icon: "🚨",
+    title: "Guard Dog Training",
+    desc: "Professional guard dog development for home and property security.",
+    color: "#C89B3C",
+  },
+  {
+    icon: "🛡️",
+    title: "Personal Protection",
+    desc: "Elite personal protection training focused on loyalty and controlled defence.",
+    color: "#0B2341",
+  },
+  {
+    icon: "💚",
+    title: "Behaviour Modification",
+    desc: "Corrective behaviour programs for aggression, anxiety, and unwanted habits.",
+    color: "#C89B3C",
+  },
 ];
 
 const PETS = [
