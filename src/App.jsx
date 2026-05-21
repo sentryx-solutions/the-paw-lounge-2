@@ -125,7 +125,7 @@ const PRODUCTS = [
 ];
 
 const WHY_US = [
-  { icon: "🏆", title: "Expert Care", desc: "Trained professional groomers with 5+ years of experience." },
+  { icon: "🏆", title: "Expert Care", desc: "Trained professional groomers with 15+ years of experience." },
   { icon: "💚", title: "Healthy Pets", desc: "Vet-approved care protocols for every service we offer." },
   { icon: "⭐", title: "Premium Products", desc: "Only the finest brands available in our curated store." },
   { icon: "🤝", title: "Friendly Environment", desc: "Calm, stress-free atmosphere designed with your pet in mind." },
